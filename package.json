@@ -1,0 +1,30 @@
+{
+  "name": "ecommerce-server",
+  "author": "nlukjanov",
+  "version": "1.0.0",
+  "engines": {
+    "node": "14.3.0",
+    "npm": "6.14.5"
+  },
+  "scripts": {
+    "start:front": "cd client && npm run start",
+    "start:back": "nodemon server.js",
+    "build": "cd client && npm run build",
+    "dev": "concurrently --kill-others-on-fail \"npm run start:front\" \"npm run start:back\"",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "dotenv": "^7.0.0",
+    "express": "^4.16.4",
+    "stripe": "^6.28.0"
+  },
+  "devDependencies": {
+    "concurrently": "^4.0.1",
+    "nodemon": "^1.19.1"
+  }
+}
