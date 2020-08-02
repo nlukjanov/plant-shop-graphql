@@ -3,7 +3,7 @@ import { Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import CollectionsOverviewContainer from '../../components/collections-overview/collections-overview.container';
-import CollectionPage from '../collection/collection.components';
+import CollectionPageContainer from '../collection/collection.container';
 
 import { fetchCollectionsStart } from '../../redux/shop/shop.actions';
 
@@ -19,7 +19,10 @@ const ShopPage = ({ match, fetchCollectionsStart }) => {
         path={`${match.path}`}
         component={CollectionsOverviewContainer}
       />
-      <Route path={`${match.path}/:collectionId`} component={CollectionPage} />
+      <Route
+        path={`${match.path}/:collectionId`}
+        component={CollectionPageContainer}
+      />
     </div>
   );
 };
