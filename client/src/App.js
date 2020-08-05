@@ -3,7 +3,7 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
-import Header from './components/header/header.component';
+import { default as Header } from './components/header/header.container';
 
 import { GlobalStyle } from './global.styles';
 
@@ -20,7 +20,6 @@ const SigninPage = lazy(() =>
 const CheckoutPage = lazy(() => import('./pages/checkout/checkout.component'));
 
 const App = ({ currentUser, setCurrentUser }) => {
-  
   useEffect(() => {
     let unsubscribeFromAuth = null;
 
